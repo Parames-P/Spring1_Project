@@ -36,8 +36,8 @@ public class Student {
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long id2) {
+		this.id = id2;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -69,6 +69,10 @@ public class Student {
 	public void setDepartment(String department) {
 		this.department = department;
 	}
+
+	
+
+	
 	
 	
 
