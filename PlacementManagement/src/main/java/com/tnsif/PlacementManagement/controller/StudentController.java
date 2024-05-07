@@ -1,10 +1,14 @@
 package com.tnsif.PlacementManagement.controller;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tnsif.PlacementManagement.entity.Student;
@@ -16,11 +20,12 @@ public class StudentController {
 	StudentRepository repo;
 
 	@GetMapping("/student")
-	public Student addstudent()
-
-	{
-
-		return new Student("parameshwari", "palanivel", "Paramesh@gmail.com", LocalDate.of(2004,03,29),"CSE");
-
+	public List<Student> addstudent() {
+       return repo.findAll();
+       }
+	@PostMapping("/student")
+	public Student addStudent(@RequestBody Student student) {
+		return repo.save(student);
 	}
+	
 }
